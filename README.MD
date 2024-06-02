@@ -29,6 +29,7 @@ Quick Start:
    [AdminId=3http://127.0.0.1:8000/createAdminInfo?AdminName=admin&Mobile=18512345678&Password=123456&Department=root](AdminId=3http://127.0.0.1:8000/createAdminInfo?AdminName=admin&Mobile=18512345678&Password=123456&Department=root)
 
 - 查询用户
+  
    [http://127.0.0.1:8000/getAdminInfo?AdminId=3](http://127.0.0.1:8000/getAdminInfo?AdminId=3)
 
 - 接口文档
