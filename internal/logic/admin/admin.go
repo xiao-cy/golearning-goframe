@@ -75,6 +75,20 @@ func (s *sAdmin) GetAdminByAdminId(ctx context.Context, adminId int64) (output *
 	return
 }
 
+func (s *sAdmin) GetAdminByMobileAndPassword(ctx context.Context, mobile string, password string) (admin *entity.Admin, err error) {
+	err = dao.Admin.Ctx(ctx).
+		Where(do.Admin{
+			Mobile:   mobile,
+			Password: password,
+		}).
+		Scan(&admin)
+	g.Log().Info(ctx, admin)
+	if err != nil {
+		return nil, err
+	}
+	return
+}
+
 func (s *sAdmin) IsMobileAvailable(ctx context.Context, moblie string) (is bool, err error) {
 	count, err := dao.Admin.Ctx(ctx).Where(do.Admin{
 		Mobile: moblie,

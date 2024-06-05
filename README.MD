@@ -41,3 +41,11 @@ Quick Start:
 - git
 
     [GitHub - gogf/gf-jwt: GoFrame HTTP JWT middleware.](https://github.com/gogf/gf-jwt)
+
+- 获取token
+  
+  http://127.0.0.1:8000/admin/login?Mobile=18512345678&Password=123456
+
+- 刷新token
+  
+  http://127.0.0.1:8000/admin/refresh_token?Token=xxxx

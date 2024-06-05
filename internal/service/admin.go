@@ -15,6 +15,7 @@ type (
 	IAdmin interface {
 		CreateAdmin(ctx context.Context, AInput model.AdminCreateInput) (adminId int64, err error)
 		GetAdminByAdminId(ctx context.Context, adminId int64) (output *entity.Admin, err error)
+		GetAdminByMobileAndPassword(ctx context.Context, mobile string, password string) (admin *entity.Admin, err error)
 		IsMobileAvailable(ctx context.Context, moblie string) (is bool, err error)
 		IsAdminNameAvailable(ctx context.Context, adminName string) (is bool, err error)
 	}

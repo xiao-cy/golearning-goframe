@@ -7,8 +7,8 @@ import (
 )
 
 type AdminLoginReq struct {
-	g.Meta   `path:"/admin/login" tags:"userInfo" method:"post" summary:"登录"`
-	Mobile   int
+	g.Meta   `path:"/admin/login" tags:"userInfo" method:"POST" summary:"登录"`
+	Mobile   string
 	Password string
 }
 type AdminLoginRes struct {
@@ -19,7 +19,7 @@ type AdminLoginRes struct {
 }
 
 type AdminRefreshTokenReq struct {
-	g.Meta `path:"/admin/refresh_token" method:"post"`
+	g.Meta `path:"/admin/refresh_token" method:"POST"`
 	Token  string `json:"token"`
 }
 
@@ -29,7 +29,7 @@ type AdminRefreshTokenRes struct {
 }
 
 type AdminLogoutReq struct {
-	g.Meta `path:"/admin/logout" method:"post"`
+	g.Meta `path:"/admin/logout" method:"POST"`
 	Token  string `json:"token"`
 }
 
