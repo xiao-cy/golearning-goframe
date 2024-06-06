@@ -32,7 +32,7 @@ type GetAdminInfoRes struct {
 }
 
 type CreateAdminReq struct {
-	g.Meta     `path:"/createAdminInfo" tags:"AdminInfo" method:"get" summary:"获取用户信息"`
+	g.Meta     `path:"/createAdminInfo" tags:"AdminInfo" method:"GET" summary:"获取用户信息"`
 	AdminName  string     `v:"required|length:4,30#请输入账号|账号长度为:{min}到:{max}位"`
 	Mobile     string     `v:"required|phone"`
 	Password   string     `v:"required|length:6,32#请输入密码|密码长度不够"`

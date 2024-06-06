@@ -16,6 +16,12 @@ Quick Start:
 
     golearning-goframe\manifest\sql\table.sql
 
+## Postman JSON
+
+> 包含项目所有接口案例
+
+golearning-goframe\manifest\postman\golearning-goframe.postman_collection.json
+
 ## CRUD
 
 > 学习项目：
@@ -26,11 +32,13 @@ Quick Start:
 
 - 创建用户
   
-   [AdminId=3http://127.0.0.1:8000/createAdminInfo?AdminName=admin&Mobile=18512345678&Password=123456&Department=root](AdminId=3http://127.0.0.1:8000/createAdminInfo?AdminName=admin&Mobile=18512345678&Password=123456&Department=root)
+  接口：/createAdminInfo
+  
+  参数：AdminName=xxx&Mobile=xxx&Password=xxx&Department=xxx
 
 - 查询用户
   
-   [http://127.0.0.1:8000/getAdminInfo?AdminId=3](http://127.0.0.1:8000/getAdminInfo?AdminId=3)
+  接口：/getAdminInfo?AdminId=xx
 
 - 接口文档
   
@@ -44,8 +52,28 @@ Quick Start:
 
 - 获取token
   
-  http://127.0.0.1:8000/admin/login?Mobile=18512345678&Password=123456
+  /admin/login
 
 - 刷新token
   
-  http://127.0.0.1:8000/admin/refresh_token?Token=xxxx
+  /admin/refresh_token
+
+- 删除token
+  
+  /admin/logout
+
+## session
+
+- 登录
+  
+   /session/login
+
+- 登出
+  
+  /session/logout
+
+- 登录可访问
+  
+   /damo
+
+  

@@ -81,12 +81,12 @@ func Authenticator(ctx context.Context) (interface{}, error) {
 		return "", err
 	}
 	admin, err := Admin().GetAdminByMobileAndPassword(ctx, in.Mobile, in.Password)
-	g.Log().Info(ctx, admin)
 	if err != nil {
 		return "", err
 	}
 
 	if admin != nil {
+		g.Log().Line(true).Info(ctx, admin)
 		return g.Map{
 			"adminId":   admin.AdminId,
 			"adminName": admin.AdminName,

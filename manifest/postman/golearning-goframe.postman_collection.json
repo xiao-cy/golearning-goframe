@@ -1,0 +1,427 @@
+{
+	"info": {
+		"_postman_id": "12563b00-7df7-4dc2-8b53-0468970df235",
+		"name": "golearning-goframe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35951919"
+	},
+	"item": [
+		{
+			"name": "jwt",
+			"item": [
+				{
+					"name": "refresh_token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsondata = pm.response.json()\r",
+									"var token = jsondata.data.token\r",
+									"pm.globals.set(\"token\",token)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{goLocUrl}}/admin/refresh_token",
+							"host": [
+								"{{goLocUrl}}"
+							],
+							"path": [
+								"admin",
+								"refresh_token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsondata = pm.response.json()\r",
+									"var token = jsondata.data.token\r",
+									"pm.globals.set(\"token\",token)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Mobile",
+									"value": "18512345678",
+									"type": "text"
+								},
+								{
+									"key": "Password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{goLocUrl}}/admin/login",
+							"host": [
+								"{{goLocUrl}}"
+							],
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.globals.unset(\"token\")"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{goLocUrl}}/admin/logout",
+							"host": [
+								"{{goLocUrl}}"
+							],
+							"path": [
+								"admin",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "session",
+			"item": [
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Mobile",
+									"value": "18512345678",
+									"type": "text"
+								},
+								{
+									"key": "Password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{goLocUrl}}/session/login",
+							"host": [
+								"{{goLocUrl}}"
+							],
+							"path": [
+								"session",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{goLocUrl}}/session/logout",
+							"host": [
+								"{{goLocUrl}}"
+							],
+							"path": [
+								"session",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "damo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{goLocUrl}}/damo",
+							"host": [
+								"{{goLocUrl}}"
+							],
+							"path": [
+								"damo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "crud",
+			"item": [
+				{
+					"name": "createAdminInfo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{goLocUrl}}/createAdminInfo?AdminName=admin&Mobile=18512345678&Password=123456&Department=root",
+							"host": [
+								"{{goLocUrl}}"
+							],
+							"path": [
+								"createAdminInfo"
+							],
+							"query": [
+								{
+									"key": "AdminName",
+									"value": "admin"
+								},
+								{
+									"key": "Mobile",
+									"value": "18512345678"
+								},
+								{
+									"key": "Password",
+									"value": "123456"
+								},
+								{
+									"key": "Department",
+									"value": "root"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAdminInfo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{goLocUrl}}/getAdminInfo?AdminId=3",
+							"host": [
+								"{{goLocUrl}}"
+							],
+							"path": [
+								"getAdminInfo"
+							],
+							"query": [
+								{
+									"key": "AdminId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "goLocUrl",
+			"value": "http://127.0.0.1:8000/",
+			"type": "string"
+		}
+	]
+}

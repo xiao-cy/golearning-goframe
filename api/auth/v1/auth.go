@@ -15,7 +15,6 @@ type AdminLoginRes struct {
 	g.Meta `mime:"text/html" example:"string"`
 	Token  string    `json:"token"`
 	Expire time.Time `json:"expire"`
-	UserId int       `json:"UserId"`
 }
 
 type AdminRefreshTokenReq struct {
@@ -34,4 +33,21 @@ type AdminLogoutReq struct {
 }
 
 type AdminLogoutRes struct {
+}
+
+type SLoginReq struct {
+	g.Meta   `path:"/session/login" tags:"userInfo" method:"POST" summary:"登录"`
+	Mobile   string
+	Password string
+}
+type SLoginRes struct {
+	g.Meta  `mime:"text/html" example:"string"`
+	AdminId int `json:"AdminId"`
+}
+
+type SLogoutReq struct {
+	g.Meta `path:"/session/logout" method:"POST"`
+}
+
+type SLogoutRes struct {
 }
