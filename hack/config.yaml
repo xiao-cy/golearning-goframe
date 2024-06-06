@@ -4,10 +4,10 @@
 
 database:
   default:
-    link: "mysql:root:cyw162370.@tcp(127.0.0.1:3306)/golearning?loc=Local&parseTime=true"
+    link: "mysql:root:xxx.@tcp(127.0.0.1:3306)/golearning?loc=Local&parseTime=true"
 
 gfcli:
   gen:
     dao:
-    - link:     "mysql:root:cyw162370.@tcp(127.0.0.1:3306)/golearning?loc=Local&parseTime=true"
+    - link:     "mysql:root:xxx.@tcp(127.0.0.1:3306)/golearning?loc=Local&parseTime=true"
       tables:   "products,admin"
